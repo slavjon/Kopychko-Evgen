@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Select price
     priceSwicher.addEventListener('change', (event) => {
         let setPrice = +event.target.value;
+
         switch (setPrice) {
             case 0:
 
@@ -48,24 +49,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 30:
                 for (let key of allProducts) {
+                    key.classList.remove('price-dn')
                     if (+/\d+/.exec(key.querySelector('p').textContent) > 30)
                         key.classList.add('price-dn')
+
                 }
                 break;
             case 50:
                 for (let key of allProducts) {
+                    key.classList.remove('price-dn')
                     if (+/\d+/.exec(key.querySelector('p').textContent) > 50)
                         key.classList.add('price-dn')
+
                 }
                 break;
             case 100:
                 for (let key of allProducts) {
+                    key.classList.remove('price-dn')
                     if (+/\d+/.exec(key.querySelector('p').textContent) > 100)
                         key.classList.add('price-dn')
+
                 }
                 break;
             case 150:
                 for (let key of allProducts) {
+                    key.classList.remove('price-dn')
                     if (+/\d+/.exec(key.querySelector('p').textContent) > 150)
                         key.classList.add('price-dn')
                 }
