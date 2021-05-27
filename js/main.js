@@ -82,4 +82,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // end Select price
+
+    //count price in product Cart
+
+    //end countp rice in product Cart count
+    // products in cart
+    let cartItems = 0;
+    let cartTotalPrice = 0;
+    let outCartTotalCount = document.querySelector('.cart__total-count');
+    let outCartTotalPrice = document.querySelector('.cart__total-money');
+
+
+    for (let key of allProducts) {
+        key.addEventListener('click', (e) => {
+            addToCart(e);
+        });
+    }
+
+    function addToCart(e) {
+        if (e.target.classList.contains('product-box__btn')) {
+            let currentPrice = +/\d+/.exec(e.currentTarget.querySelector('p').textContent);
+            let currentItems = +e.currentTarget.querySelector('.qty__item').value;
+            let totalCurPrice = currentPrice * currentItems;
+            cartTotalPrice = cartTotalPrice + totalCurPrice;
+            cartItems = cartItems + currentItems;
+
+            outCartTotalCount.textContent = cartItems;
+            outCartTotalPrice.textContent = cartTotalPrice;
+
+        }
+    }
+
+
+    //end products in cart
 });
