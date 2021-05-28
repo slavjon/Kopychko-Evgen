@@ -83,9 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // end Select price
 
-    //count price in product Cart
-
-    //end countp rice in product Cart count
     // products in cart
     let cartItems = 0;
     let cartTotalPrice = 0;
@@ -112,7 +109,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     }
-
-
     //end products in cart
+
+    // popup form
+    document.querySelector('.add__order-btn').addEventListener('click', () => {
+        document.querySelector('.popup__wrap').classList.add('open')
+        document.body.style.overflow = "hidden";
+    });
+    document.querySelector('.close__btn').addEventListener('click', () => {
+        document.querySelector('.popup__wrap').classList.remove('open')
+        document.body.style.overflow = "auto";
+    });
+
+    let popupForm = document.querySelector('.popup__form');
+
+    popupForm.addEventListener('submit', (e) => {
+        let inpName = document.querySelector('.inp__name');
+        if (!checkSpaces(inpName.value)) {
+            e.preventDefault();
+            inpName.classList.add('no-valid');
+        } else {
+            inpName.classList.remove('no-valid');
+            outCartTotalCount.textContent = "XXX";
+            outCartTotalPrice.textContent = "XXX";
+            alert('Спасибо за заказ! Мы свяжемся в ближайшее время.')
+        }
+
+
+    });
+
+    function checkSpaces(str) {
+        return str.trim() !== '';
+    }
+    //end popup form
 });

@@ -223,7 +223,92 @@ h3 {
     justify-content: space-around;
 }
 
+
+/* add custom styles */
+
 .cat-dn,
 .price-dn {
     display: none;
 }
+
+
+/* popup */
+
+.popup__wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup__wrap.open {
+    display: flex;
+}
+
+.close__btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    left: auto;
+    width: 30px;
+    height: 35px;
+    color: #fff;
+    background: #111;
+    font-size: 2rem;
+    line-height: 2rem;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.popup__content {
+    width: 100%;
+    max-width: 425px;
+    min-width: 280px;
+    padding: 25px;
+    background: #eee;
+}
+
+.popup__content .title {
+    font-size: 35px;
+}
+
+.popup__content form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.popup__content form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.popup__content form input {
+    height: 40px;
+    width: 100%;
+    padding: 0 5px;
+    margin-bottom: 15px;
+}
+
+.inp__name.no-valid {
+    border: 3px solid red;
+}
+
+.popup__content form .btn {
+    height: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+/*end popup */
